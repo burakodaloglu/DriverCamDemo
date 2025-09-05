@@ -11,25 +11,25 @@ import Swinject
 class AppAssembly: Assembly {
     func assemble(container: Container) {
         
-        container.register(FirmwareRepository.self) { r in
-            DefaultFirmwareRepository(
-                sdkWrapper: r.resolve(NovatekSDKWrapper.self)!,
-                networkService: r.resolve(NetworkService.self)!
-            )
-        }
         // MARK: - Data Layer
-        container.register(NovatekSDKWrapper.self) { _ in NovatekSDKWrapper.shared }.inObjectScope(.container)
+        container.register(LibDV16SDKWrapper.self) { _ in LibDV16SDKWrapper.shared }.inObjectScope(.container)
         
         container.register(NetworkService.self) { _ in DefaultNetworkService() }
         
         container.register(CameraControlRepository.self) { r in
-            DefaultCameraControlRepository(sdkWrapper: r.resolve(NovatekSDKWrapper.self)!)
+            DefaultCameraControlRepository(sdkWrapper: r.resolve(LibDV16SDKWrapper.self)!)
         }
         container.register(FileRepository.self) { r in
-            DefaultFileRepository(sdkWrapper: r.resolve(NovatekSDKWrapper.self)!)
+            DefaultFileRepository(sdkWrapper: r.resolve(LibDV16SDKWrapper.self)!)
         }
         container.register(SettingsRepository.self) { r in
-            DefaultSettingsRepository(sdkWrapper: r.resolve(NovatekSDKWrapper.self)!)
+            DefaultSettingsRepository(sdkWrapper: r.resolve(LibDV16SDKWrapper.self)!)
+        }
+        container.register(FirmwareRepository.self) { r in
+            DefaultFirmwareRepository(
+                sdkWrapper: r.resolve(LibDV16SDKWrapper.self)!,
+                networkService: r.resolve(NetworkService.self)!
+            )
         }
         
         // MARK: - Domain Layer (UseCases)

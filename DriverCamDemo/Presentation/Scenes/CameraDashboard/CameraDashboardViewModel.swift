@@ -12,7 +12,8 @@ import Combine
 class CameraDashboardViewModel: ObservableObject {
     @Published var connectionStatus: ConnectionState = .disconnected
     @Published var isRecording: Bool = false
-    
+    @Published var streamUrl: URL? 
+
     private let connectUseCase: ConnectCameraUseCase
     private let toggleRecordingUseCase: ToggleRecordingUseCase
     private let cameraControlRepo: CameraControlRepository
@@ -32,6 +33,12 @@ class CameraDashboardViewModel: ObservableObject {
         
         cameraControlRepo.isRecording
             .assign(to: &$isRecording)
+    }
+    
+    func onViewAppear() {
+        Task {
+            self.streamUrl = try? await cameraControlRepo.getStreamURL()
+        }
     }
     
     func connectButtonTapped() {

@@ -24,6 +24,9 @@ struct CameraDashboardView: View {
                 .navigationDestination(for: AppCoordinator.Page.self) { page in
                     coordinator.build(page: page)
                 }
+                .onAppear { 
+                    viewModel.onViewAppear()
+                }
         }
     }
     
@@ -31,12 +34,7 @@ struct CameraDashboardView: View {
         ZStack {
             Color(uiColor: .systemGray6).edgesIgnoringSafeArea(.all)
             VStack {
-                Color.black
-                    .overlay(
-                        Image(systemName: "video.fill")
-                            .font(.largeTitle)
-                            .foregroundColor(.gray)
-                    )
+                VideoPlayerView(streamUrl: $viewModel.streamUrl) 
                     .aspectRatio(16/9, contentMode: .fit)
                     .cornerRadius(12)
                     .padding()
@@ -46,6 +44,7 @@ struct CameraDashboardView: View {
             }
         }
     }
+
     
     private var bottomControls: some View {
         VStack(spacing: 15) {
@@ -81,6 +80,7 @@ struct CameraDashboardView: View {
     }
 }
 
+// ConnectionState extension'ı aynı kalır.
 extension ConnectionState {
     var description: String {
         switch self {

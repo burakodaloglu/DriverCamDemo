@@ -12,6 +12,9 @@
 		2A6758AD2E55C60900CC59CB /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2A6758AC2E55C60900CC59CB /* SDWebImageSwiftUI */; };
 		2A6758B02E55C66700CC59CB /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 2A6758AF2E55C66700CC59CB /* Realm */; };
 		2A6758B52E55C68800CC59CB /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 2A6758B42E55C68800CC59CB /* KeychainAccess */; };
+		2A8F075A2E6AD9F20009EFB4 /* LibDV16SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A8F07582E6AD9D80009EFB4 /* LibDV16SDK.framework */; };
+		2A8F075B2E6AD9F20009EFB4 /* LibDV16SDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2A8F07582E6AD9D80009EFB4 /* LibDV16SDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2A8F07672E6ADE4B0009EFB4 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A8F07662E6ADE4B0009EFB4 /* IJKMediaFramework.framework */; };
 		2AEC22102E55E876004BCAE8 /* Realm in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 2A6758AF2E55C66700CC59CB /* Realm */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
@@ -39,6 +42,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				2A8F075B2E6AD9F20009EFB4 /* LibDV16SDK.framework in Embed Frameworks */,
 				2AEC22102E55E876004BCAE8 /* Realm in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -50,6 +54,8 @@
 		2A6758272E55A46300CC59CB /* DriverCamDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DriverCamDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A6758342E55A46400CC59CB /* DriverCamDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DriverCamDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A67583E2E55A46400CC59CB /* DriverCamDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DriverCamDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A8F07582E6AD9D80009EFB4 /* LibDV16SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LibDV16SDK.framework; sourceTree = "<group>"; };
+		2A8F07662E6ADE4B0009EFB4 /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -75,11 +81,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A8F075A2E6AD9F20009EFB4 /* LibDV16SDK.framework in Frameworks */,
 				2A6758B02E55C66700CC59CB /* Realm in Frameworks */,
 				2A6758AD2E55C60900CC59CB /* SDWebImageSwiftUI in Frameworks */,
 				2A6758852E55C57400CC59CB /* Alamofire in Frameworks */,
 				2A6758B52E55C68800CC59CB /* KeychainAccess in Frameworks */,
 				2A6758802E55C55B00CC59CB /* Swinject in Frameworks */,
+				2A8F07672E6ADE4B0009EFB4 /* IJKMediaFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +115,8 @@
 				2A6758372E55A46400CC59CB /* DriverCamDemoTests */,
 				2A6758412E55A46400CC59CB /* DriverCamDemoUITests */,
 				2A6758282E55A46300CC59CB /* Products */,
+				2A8F07582E6AD9D80009EFB4 /* LibDV16SDK.framework */,
+				2A8F07662E6ADE4B0009EFB4 /* IJKMediaFramework.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -392,6 +402,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DriverCamDemo/DriverCamDemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -449,6 +460,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "DriverCamDemo/DriverCamDemo-Bridging-Header.h";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -462,6 +474,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3GS9284VMU;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -490,6 +506,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3GS9284VMU;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

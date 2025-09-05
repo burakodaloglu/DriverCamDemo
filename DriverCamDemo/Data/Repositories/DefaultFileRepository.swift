@@ -9,9 +9,9 @@ import Foundation
 import CoreLocation
 
 class DefaultFileRepository: FileRepository {
-    private let sdkWrapper: NovatekSDKWrapper
+    private let sdkWrapper: LibDV16SDKWrapper
 
-    init(sdkWrapper: NovatekSDKWrapper) {
+    init(sdkWrapper: LibDV16SDKWrapper) {
         self.sdkWrapper = sdkWrapper
     }
 

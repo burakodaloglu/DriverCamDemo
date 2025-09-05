@@ -8,10 +8,10 @@
 import Foundation
 
 class DefaultFirmwareRepository: FirmwareRepository {
-    private let sdkWrapper: NovatekSDKWrapper
+    private let sdkWrapper: LibDV16SDKWrapper
     private let networkService: NetworkService
 
-    init(sdkWrapper: NovatekSDKWrapper, networkService: NetworkService) {
+    init(sdkWrapper: LibDV16SDKWrapper, networkService: NetworkService) {
         self.sdkWrapper = sdkWrapper
         self.networkService = networkService
     }

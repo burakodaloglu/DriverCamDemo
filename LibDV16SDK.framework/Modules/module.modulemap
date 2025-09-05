@@ -1,0 +1,6 @@
+framework module LibDV16SDK {
+  umbrella header "LibDV16SDK.h"
+
+  export *
+  module * { export * }
+}

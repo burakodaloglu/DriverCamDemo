@@ -6,11 +6,12 @@
 //
 
 import Foundation
+import LibDV16SDK
 
 class DefaultSettingsRepository: SettingsRepository {
-    private let sdkWrapper: NovatekSDKWrapper
+    private let sdkWrapper: LibDV16SDKWrapper
 
-    init(sdkWrapper: NovatekSDKWrapper) {
+    init(sdkWrapper: LibDV16SDKWrapper) {
         self.sdkWrapper = sdkWrapper
     }
 
