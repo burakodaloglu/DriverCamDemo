@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import LibDV16SDK
 
 class DefaultSettingsRepository: SettingsRepository {
     private let sdkWrapper: LibDV16SDKWrapper
@@ -25,19 +24,35 @@ class DefaultSettingsRepository: SettingsRepository {
         return statusDict.compactMapValues { $0 as? Int }
     }
 
+    // --- DEĞİŞTİ ---
     func updateSetting(settingId: String, newOptionIndex: Int) async throws {
-        try await sdkWrapper.sendCommand(cmdId: settingId, parNum: newOptionIndex)
+        // Artık `sendCommand` yerine `updateSetting` fonksiyonunu çağırıyoruz.
+       await sdkWrapper.updateSetting(topic: settingId, value: newOptionIndex)
     }
 
-    func syncTime() async throws { try await sdkWrapper.synchronizeTime() }
-    func formatSDCard() async throws { try await sdkWrapper.formatSDCard() }
-    func resetWifi() async throws { try await sdkWrapper.resetWiFi() }
-    func factoryReset() async throws { try await sdkWrapper.factoryReset() }
-
+    // --- DEĞİŞTİ ---
+    func syncTime() async throws {
+        await  sdkWrapper.synchronizeTime()
+    }
+    
+    // --- DEĞİŞTİ ---
+    func formatSDCard() async throws {
+        await sdkWrapper.formatSDCard()
+    }
+    
+    // --- DEĞİŞTİ ---
+    func resetWifi() async throws {
+        await sdkWrapper.resetWiFi()
+    }
+    
+    // --- DEĞİŞTİ ---
+    func factoryReset() async throws {
+        await sdkWrapper.factoryReset()
+    }
+    
+    // --- DEĞİŞTİ ---
     func setWifiCredentials(ssid: String, password: String) async throws {
-        try await sdkWrapper.sendCommand(cmdId: "3003", str: ssid)
-        try await sdkWrapper.sendCommand(cmdId: "3004", str: password)
-        try await sdkWrapper.resetWiFi()
+        await sdkWrapper.setWifiCredentials(ssid: ssid, password: password)
     }
 
     func getSDCardCapacity() async throws -> (total: Int, free: Int) {

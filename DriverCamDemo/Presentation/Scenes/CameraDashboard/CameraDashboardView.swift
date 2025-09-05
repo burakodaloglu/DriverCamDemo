@@ -45,7 +45,6 @@ struct CameraDashboardView: View {
         }
     }
 
-    
     private var bottomControls: some View {
         VStack(spacing: 15) {
             Text(viewModel.connectionStatus.description)
@@ -53,11 +52,12 @@ struct CameraDashboardView: View {
                 .foregroundColor(viewModel.connectionStatus == .connected ? .green : .primary)
             
             HStack(spacing: 40) {
-                Button(action: viewModel.connectButtonTapped) {
-                    Image(systemName: "wifi")
+                Button(action: viewModel.wifiButtonTapped) { 
+                    Image(systemName: viewModel.connectionStatus == .connected ? "wifi.slash" : "wifi") // 2. Simge artık duruma göre değişiyor
                         .font(.largeTitle)
+                        .foregroundColor(viewModel.connectionStatus == .connected ? .red : .accentColor) // 3. Bağlıyken kırmızı renk oluyor
                 }
-                .disabled(viewModel.connectionStatus == .connecting || viewModel.connectionStatus == .connected)
+                .disabled(viewModel.connectionStatus == .connecting) // 4. Sadece "Bağlanılıyor..." durumunda pasif
                 
                 Button(action: viewModel.recordButtonTapped) {
                     Image(systemName: viewModel.isRecording ? "stop.circle.fill" : "record.circle")

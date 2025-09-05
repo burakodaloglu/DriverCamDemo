@@ -26,4 +26,5 @@ protocol CameraControlRepository {
     // YENİ EKLENDİ
     func switchToMode(_ mode: CameraMode) async throws
     func getStreamURL() async throws -> URL?
+    func disconnect() async
 }

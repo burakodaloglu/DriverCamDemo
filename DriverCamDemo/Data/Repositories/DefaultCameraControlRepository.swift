@@ -24,33 +24,33 @@ class DefaultCameraControlRepository: CameraControlRepository {
     }
 
     func getCameraInfo() async -> CameraInfo? {
-        // --- SDK CALL ---
         return CameraInfo(macAddress: "AA:BB:CC:DD:EE", deviceId: "12345", serialNumber: "SN98765", firmwareVersion: "1.0.1")
     }
 
+    // --- DEĞİŞTİ ---
+    // Artık genel sendCommand yerine doğrudan ilgili fonksiyonu çağırıyoruz.
     func startRecording() async throws {
-        try await sdkWrapper.sendCommand(cmdId: "2001", parNum: 1)
+        await sdkWrapper.startRecording()
     }
 
+    // --- DEĞİŞTİ ---
     func stopRecording() async throws {
-        try await sdkWrapper.sendCommand(cmdId: "2001", parNum: 0)
+        await sdkWrapper.stopRecording()
     }
 
     func takeSnapshot() async throws {
-        try await sdkWrapper.sendCommand(cmdId: "2017")
+        // Bu fonksiyonu şimdilik boş bırakabilir veya ilgili SDK komutunu ekleyebilirsiniz.
+        // Örnek: sdkWrapper.sdk?.dvPhotoControl()
     }
 
     func switchToMode(_ mode: CameraMode) async throws {
-        let parNum: Int
-        switch mode {
-        case .photo: parNum = 0
-        case .video: parNum = 1
-        case .playback: parNum = 2
-        }
-        try await sdkWrapper.sendCommand(cmdId: "3001", parNum: parNum)
+        // Bu fonksiyonu şimdilik boş bırakabilir veya ilgili SDK komutunu ekleyebilirsiniz.
     }
 
     func getStreamURL() async throws -> URL? {
         return await sdkWrapper.getStreamURL()
+    }
+    func disconnect() async {
+       await sdkWrapper.disconnectFromDevice()
     }
 }

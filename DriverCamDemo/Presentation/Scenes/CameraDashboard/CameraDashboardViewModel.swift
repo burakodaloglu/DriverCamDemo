@@ -47,6 +47,19 @@ class CameraDashboardViewModel: ObservableObject {
         }
     }
     
+    func wifiButtonTapped() {
+            Task {
+                switch connectionStatus {
+                case .disconnected, .failed:
+                    await connectUseCase.execute()
+                case .connected:
+                    await cameraControlRepo.disconnect()
+                case .connecting:
+                    break
+                }
+            }
+        }
+    
     func recordButtonTapped(){
         Task {
             try await toggleRecordingUseCase.execute(isRecording: self.isRecording)
