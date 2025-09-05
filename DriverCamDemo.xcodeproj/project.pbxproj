@@ -1,0 +1,697 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2A6758802E55C55B00CC59CB /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 2A67587F2E55C55B00CC59CB /* Swinject */; };
+		2A6758852E55C57400CC59CB /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 2A6758842E55C57400CC59CB /* Alamofire */; };
+		2A6758AD2E55C60900CC59CB /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2A6758AC2E55C60900CC59CB /* SDWebImageSwiftUI */; };
+		2A6758B02E55C66700CC59CB /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 2A6758AF2E55C66700CC59CB /* Realm */; };
+		2A6758B52E55C68800CC59CB /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 2A6758B42E55C68800CC59CB /* KeychainAccess */; };
+		2AEC22102E55E876004BCAE8 /* Realm in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 2A6758AF2E55C66700CC59CB /* Realm */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2A6758352E55A46400CC59CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A67581F2E55A46300CC59CB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A6758262E55A46300CC59CB;
+			remoteInfo = DriverCamDemo;
+		};
+		2A67583F2E55A46400CC59CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A67581F2E55A46300CC59CB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A6758262E55A46300CC59CB;
+			remoteInfo = DriverCamDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2AEC22112E55E876004BCAE8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2AEC22102E55E876004BCAE8 /* Realm in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2A6758272E55A46300CC59CB /* DriverCamDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DriverCamDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A6758342E55A46400CC59CB /* DriverCamDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DriverCamDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A67583E2E55A46400CC59CB /* DriverCamDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DriverCamDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		2A6758292E55A46300CC59CB /* DriverCamDemo */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = DriverCamDemo;
+			sourceTree = "<group>";
+		};
+		2A6758372E55A46400CC59CB /* DriverCamDemoTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = DriverCamDemoTests;
+			sourceTree = "<group>";
+		};
+		2A6758412E55A46400CC59CB /* DriverCamDemoUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = DriverCamDemoUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2A6758242E55A46300CC59CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A6758B02E55C66700CC59CB /* Realm in Frameworks */,
+				2A6758AD2E55C60900CC59CB /* SDWebImageSwiftUI in Frameworks */,
+				2A6758852E55C57400CC59CB /* Alamofire in Frameworks */,
+				2A6758B52E55C68800CC59CB /* KeychainAccess in Frameworks */,
+				2A6758802E55C55B00CC59CB /* Swinject in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A6758312E55A46400CC59CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A67583B2E55A46400CC59CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2A67581E2E55A46300CC59CB = {
+			isa = PBXGroup;
+			children = (
+				2A6758292E55A46300CC59CB /* DriverCamDemo */,
+				2A6758372E55A46400CC59CB /* DriverCamDemoTests */,
+				2A6758412E55A46400CC59CB /* DriverCamDemoUITests */,
+				2A6758282E55A46300CC59CB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2A6758282E55A46300CC59CB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2A6758272E55A46300CC59CB /* DriverCamDemo.app */,
+				2A6758342E55A46400CC59CB /* DriverCamDemoTests.xctest */,
+				2A67583E2E55A46400CC59CB /* DriverCamDemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2A6758262E55A46300CC59CB /* DriverCamDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A6758482E55A46400CC59CB /* Build configuration list for PBXNativeTarget "DriverCamDemo" */;
+			buildPhases = (
+				2A675C5C2E55FA01006F0CE4 /* Swift Formatter */,
+				2A6758232E55A46300CC59CB /* Sources */,
+				2A6758242E55A46300CC59CB /* Frameworks */,
+				2A6758252E55A46300CC59CB /* Resources */,
+				2AEC22112E55E876004BCAE8 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				2A6758292E55A46300CC59CB /* DriverCamDemo */,
+			);
+			name = DriverCamDemo;
+			packageProductDependencies = (
+				2A67587F2E55C55B00CC59CB /* Swinject */,
+				2A6758842E55C57400CC59CB /* Alamofire */,
+				2A6758AC2E55C60900CC59CB /* SDWebImageSwiftUI */,
+				2A6758AF2E55C66700CC59CB /* Realm */,
+				2A6758B42E55C68800CC59CB /* KeychainAccess */,
+			);
+			productName = DriverCamDemo;
+			productReference = 2A6758272E55A46300CC59CB /* DriverCamDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2A6758332E55A46400CC59CB /* DriverCamDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A67584B2E55A46400CC59CB /* Build configuration list for PBXNativeTarget "DriverCamDemoTests" */;
+			buildPhases = (
+				2A6758302E55A46400CC59CB /* Sources */,
+				2A6758312E55A46400CC59CB /* Frameworks */,
+				2A6758322E55A46400CC59CB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2A6758362E55A46400CC59CB /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				2A6758372E55A46400CC59CB /* DriverCamDemoTests */,
+			);
+			name = DriverCamDemoTests;
+			packageProductDependencies = (
+			);
+			productName = DriverCamDemoTests;
+			productReference = 2A6758342E55A46400CC59CB /* DriverCamDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2A67583D2E55A46400CC59CB /* DriverCamDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A67584E2E55A46400CC59CB /* Build configuration list for PBXNativeTarget "DriverCamDemoUITests" */;
+			buildPhases = (
+				2A67583A2E55A46400CC59CB /* Sources */,
+				2A67583B2E55A46400CC59CB /* Frameworks */,
+				2A67583C2E55A46400CC59CB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2A6758402E55A46400CC59CB /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				2A6758412E55A46400CC59CB /* DriverCamDemoUITests */,
+			);
+			name = DriverCamDemoUITests;
+			packageProductDependencies = (
+			);
+			productName = DriverCamDemoUITests;
+			productReference = 2A67583E2E55A46400CC59CB /* DriverCamDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2A67581F2E55A46300CC59CB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1640;
+				LastUpgradeCheck = 1640;
+				TargetAttributes = {
+					2A6758262E55A46300CC59CB = {
+						CreatedOnToolsVersion = 16.4;
+					};
+					2A6758332E55A46400CC59CB = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 2A6758262E55A46300CC59CB;
+					};
+					2A67583D2E55A46400CC59CB = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 2A6758262E55A46300CC59CB;
+					};
+				};
+			};
+			buildConfigurationList = 2A6758222E55A46300CC59CB /* Build configuration list for PBXProject "DriverCamDemo" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2A67581E2E55A46300CC59CB;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				2A67587E2E55C55B00CC59CB /* XCRemoteSwiftPackageReference "Swinject" */,
+				2A6758832E55C57400CC59CB /* XCRemoteSwiftPackageReference "Alamofire" */,
+				2A6758AB2E55C60900CC59CB /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				2A6758AE2E55C66700CC59CB /* XCRemoteSwiftPackageReference "realm-swift" */,
+				2A6758B32E55C68800CC59CB /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 2A6758282E55A46300CC59CB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2A6758262E55A46300CC59CB /* DriverCamDemo */,
+				2A6758332E55A46400CC59CB /* DriverCamDemoTests */,
+				2A67583D2E55A46400CC59CB /* DriverCamDemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2A6758252E55A46300CC59CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A6758322E55A46400CC59CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A67583C2E55A46400CC59CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2A675C5C2E55FA01006F0CE4 /* Swift Formatter */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Formatter";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftformat >/dev/null; then\n  swiftformat .\nelse\n  echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2A6758232E55A46300CC59CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A6758302E55A46400CC59CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A67583A2E55A46400CC59CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2A6758362E55A46400CC59CB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A6758262E55A46300CC59CB /* DriverCamDemo */;
+			targetProxy = 2A6758352E55A46400CC59CB /* PBXContainerItemProxy */;
+		};
+		2A6758402E55A46400CC59CB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A6758262E55A46300CC59CB /* DriverCamDemo */;
+			targetProxy = 2A67583F2E55A46400CC59CB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2A6758462E55A46400CC59CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 3GS9284VMU;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2A6758472E55A46400CC59CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 3GS9284VMU;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2A6758492E55A46400CC59CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3GS9284VMU;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dumanarge.DriverCamDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2A67584A2E55A46400CC59CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3GS9284VMU;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dumanarge.DriverCamDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2A67584C2E55A46400CC59CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3GS9284VMU;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dumanarge.DriverCamDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DriverCamDemo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DriverCamDemo";
+			};
+			name = Debug;
+		};
+		2A67584D2E55A46400CC59CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3GS9284VMU;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dumanarge.DriverCamDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DriverCamDemo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DriverCamDemo";
+			};
+			name = Release;
+		};
+		2A67584F2E55A46400CC59CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3GS9284VMU;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dumanarge.DriverCamDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DriverCamDemo;
+			};
+			name = Debug;
+		};
+		2A6758502E55A46400CC59CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3GS9284VMU;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dumanarge.DriverCamDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DriverCamDemo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2A6758222E55A46300CC59CB /* Build configuration list for PBXProject "DriverCamDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A6758462E55A46400CC59CB /* Debug */,
+				2A6758472E55A46400CC59CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A6758482E55A46400CC59CB /* Build configuration list for PBXNativeTarget "DriverCamDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A6758492E55A46400CC59CB /* Debug */,
+				2A67584A2E55A46400CC59CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A67584B2E55A46400CC59CB /* Build configuration list for PBXNativeTarget "DriverCamDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A67584C2E55A46400CC59CB /* Debug */,
+				2A67584D2E55A46400CC59CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A67584E2E55A46400CC59CB /* Build configuration list for PBXNativeTarget "DriverCamDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A67584F2E55A46400CC59CB /* Debug */,
+				2A6758502E55A46400CC59CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2A67587E2E55C55B00CC59CB /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.9.1;
+			};
+		};
+		2A6758832E55C57400CC59CB /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
+		2A6758AB2E55C60900CC59CB /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.3;
+			};
+		};
+		2A6758AE2E55C66700CC59CB /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		2A6758B32E55C68800CC59CB /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2A67587F2E55C55B00CC59CB /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A67587E2E55C55B00CC59CB /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
+		2A6758842E55C57400CC59CB /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A6758832E55C57400CC59CB /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		2A6758AC2E55C60900CC59CB /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A6758AB2E55C60900CC59CB /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+		2A6758AF2E55C66700CC59CB /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A6758AE2E55C66700CC59CB /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		2A6758B42E55C68800CC59CB /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A6758B32E55C68800CC59CB /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 2A67581F2E55A46300CC59CB /* Project object */;
+}
