@@ -24,33 +24,26 @@ class DefaultSettingsRepository: SettingsRepository {
         return statusDict.compactMapValues { $0 as? Int }
     }
 
-    // --- DEĞİŞTİ ---
     func updateSetting(settingId: String, newOptionIndex: Int) async throws {
-        // Artık `sendCommand` yerine `updateSetting` fonksiyonunu çağırıyoruz.
-       await sdkWrapper.updateSetting(topic: settingId, value: newOptionIndex)
+        await sdkWrapper.updateSetting(topic: settingId, value: newOptionIndex)
     }
 
-    // --- DEĞİŞTİ ---
     func syncTime() async throws {
-        await  sdkWrapper.synchronizeTime()
+        await sdkWrapper.synchronizeTime()
     }
     
-    // --- DEĞİŞTİ ---
     func formatSDCard() async throws {
         await sdkWrapper.formatSDCard()
     }
     
-    // --- DEĞİŞTİ ---
     func resetWifi() async throws {
         await sdkWrapper.resetWiFi()
     }
     
-    // --- DEĞİŞTİ ---
     func factoryReset() async throws {
         await sdkWrapper.factoryReset()
     }
     
-    // --- DEĞİŞTİ ---
     func setWifiCredentials(ssid: String, password: String) async throws {
         await sdkWrapper.setWifiCredentials(ssid: ssid, password: password)
     }

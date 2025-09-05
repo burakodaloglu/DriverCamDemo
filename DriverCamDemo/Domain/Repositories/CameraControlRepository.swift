@@ -18,13 +18,11 @@ protocol CameraControlRepository {
     var isRecording: AnyPublisher<Bool, Never> { get }
 
     func connect() async
+    func disconnect() async
     func getCameraInfo() async -> CameraInfo?
     func startRecording() async throws
     func stopRecording() async throws
     func takeSnapshot() async throws
-
-    // YENİ EKLENDİ
     func switchToMode(_ mode: CameraMode) async throws
     func getStreamURL() async throws -> URL?
-    func disconnect() async
 }

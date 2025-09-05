@@ -14,8 +14,8 @@ class LibDV16SDKWrapper: NSObject {
     static let shared = LibDV16SDKWrapper()
 
     let connectionStateSubject = CurrentValueSubject<ConnectionState, Never>(.disconnected)
-    let sdCardStatusSubject = CurrentValueSubject<SdCardStatus, Never>(.notInserted)
     let isRecordingSubject = CurrentValueSubject<Bool, Never>(false)
+    let sdCardStatusSubject = CurrentValueSubject<SdCardStatus, Never>(.notInserted)
 
     private let sdk = JLCtpSender.sharedInstanced()
 
@@ -36,13 +36,13 @@ class LibDV16SDKWrapper: NSObject {
     
     // MARK: - Notification Handlers
     @objc private func didConnect(notification: NSNotification) {
-        print("SDK BAĞLANTI BİLDİRİMİ: Bağlandı!")
+        print("SDK BAĞLANDI (Bildirim yoluyla)")
         connectionStateSubject.send(.connected)
         sdk?.appAccessInfoRequest()
     }
     
     @objc private func didDisconnect(notification: NSNotification) {
-        print("SDK BAĞLANTI BİLDİRİMİ: Bağlantı kesildi.")
+        print("SDK BAĞLANTISI KESİLDİ (Bildirim yoluyla)")
         connectionStateSubject.send(.disconnected)
     }
     
@@ -60,10 +60,13 @@ class LibDV16SDKWrapper: NSObject {
 
     // MARK: - SDK Functions
     func connectToDevice() {
-        connectionStateSubject.send(.connecting)
         let deviceIP = "192.168.1.1"
         let port: Int = 3333
         sdk?.didConnect(toAddress: deviceIP, withPort: port)
+    }
+    
+    func disconnectFromDevice() {
+        sdk?.desConnectedCTP()
     }
 
     func getStreamURL() async -> URL? {
@@ -107,12 +110,8 @@ class LibDV16SDKWrapper: NSObject {
     func factoryReset() {
         sdk?.dvMakeDeviceReset()
     }
-    
-    func disconnectFromDevice() {
-        print("SDK -> Bağlantı Kesiliyor...")
-        sdk?.desConnectedCTP()
-    }
 
+    // Gerekli diğer boş fonksiyonlar
     func getFileList() async throws -> [CameraFile] { return [] }
     func getAllSettings() async throws -> [Any] { return [] }
     func getCurrentStatus() async throws -> [String: Any] { return [:] }

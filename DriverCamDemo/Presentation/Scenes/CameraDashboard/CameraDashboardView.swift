@@ -24,27 +24,26 @@ struct CameraDashboardView: View {
                 .navigationDestination(for: AppCoordinator.Page.self) { page in
                     coordinator.build(page: page)
                 }
-                .onAppear { 
-                    viewModel.onViewAppear()
-                }
         }
     }
     
     private var content: some View {
-        ZStack {
-            Color(uiColor: .systemGray6).edgesIgnoringSafeArea(.all)
-            VStack {
-                VideoPlayerView(streamUrl: $viewModel.streamUrl) 
-                    .aspectRatio(16/9, contentMode: .fit)
-                    .cornerRadius(12)
-                    .padding()
+        VStack(spacing: 0) {
+            VideoPlayerView(streamUrl: $viewModel.streamUrl)
+                .aspectRatio(16/9, contentMode: .fit)
+                .background(Color.black)
 
+            VStack {
                 Spacer()
                 bottomControls
+                Spacer()
             }
+            .frame(maxWidth: .infinity)
+            .background(Color(uiColor: .systemGray6))
         }
+        .edgesIgnoringSafeArea(.bottom)
     }
-
+    
     private var bottomControls: some View {
         VStack(spacing: 15) {
             Text(viewModel.connectionStatus.description)
@@ -52,12 +51,12 @@ struct CameraDashboardView: View {
                 .foregroundColor(viewModel.connectionStatus == .connected ? .green : .primary)
             
             HStack(spacing: 40) {
-                Button(action: viewModel.wifiButtonTapped) { 
-                    Image(systemName: viewModel.connectionStatus == .connected ? "wifi.slash" : "wifi") // 2. Simge artık duruma göre değişiyor
+                Button(action: viewModel.wifiButtonTapped) {
+                    Image(systemName: viewModel.connectionStatus == .connected ? "wifi.slash" : "wifi")
                         .font(.largeTitle)
-                        .foregroundColor(viewModel.connectionStatus == .connected ? .red : .accentColor) // 3. Bağlıyken kırmızı renk oluyor
+                        .foregroundColor(viewModel.connectionStatus == .connected ? .red : .accentColor)
                 }
-                .disabled(viewModel.connectionStatus == .connecting) // 4. Sadece "Bağlanılıyor..." durumunda pasif
+                .disabled(viewModel.connectionStatus == .connecting)
                 
                 Button(action: viewModel.recordButtonTapped) {
                     Image(systemName: viewModel.isRecording ? "stop.circle.fill" : "record.circle")
@@ -76,22 +75,6 @@ struct CameraDashboardView: View {
         }
         ToolbarItem(placement: .navigationBarTrailing) {
             Button(action: { coordinator.goTo(.fileList) }) { Image(systemName: "folder") }
-        }
-    }
-}
-
-// ConnectionState extension'ı aynı kalır.
-extension ConnectionState {
-    var description: String {
-        switch self {
-        case .disconnected:
-            return "Bağlı Değil"
-        case .connecting:
-            return "Bağlanılıyor..."
-        case .connected:
-            return "Bağlandı"
-        case .failed(let error):
-            return "Hata: \(error)"
         }
     }
 }

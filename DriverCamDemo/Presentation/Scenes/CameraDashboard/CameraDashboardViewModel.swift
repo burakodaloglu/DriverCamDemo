@@ -12,7 +12,7 @@ import Combine
 class CameraDashboardViewModel: ObservableObject {
     @Published var connectionStatus: ConnectionState = .disconnected
     @Published var isRecording: Bool = false
-    @Published var streamUrl: URL? 
+    @Published var streamUrl: URL?
 
     private let connectUseCase: ConnectCameraUseCase
     private let toggleRecordingUseCase: ToggleRecordingUseCase
@@ -29,36 +29,39 @@ class CameraDashboardViewModel: ObservableObject {
     
     private func subscribeToPublishers() {
         cameraControlRepo.connectionState
-            .assign(to: &$connectionStatus)
+            .sink { [weak self] state in
+                self?.connectionStatus = state
+                if state == .disconnected || state == .failed(""){
+                    self?.streamUrl = nil
+                }
+                if state == .connected {
+                    self?.getLiveStreamUrl()
+                }
+            }
+            .store(in: &cancellables)
         
         cameraControlRepo.isRecording
             .assign(to: &$isRecording)
     }
     
-    func onViewAppear() {
+    private func getLiveStreamUrl() {
         Task {
             self.streamUrl = try? await cameraControlRepo.getStreamURL()
         }
     }
     
-    func connectButtonTapped() {
-        Task {
-            await connectUseCase.execute()
-        }
-    }
-    
     func wifiButtonTapped() {
-            Task {
-                switch connectionStatus {
-                case .disconnected, .failed:
-                    await connectUseCase.execute()
-                case .connected:
-                    await cameraControlRepo.disconnect()
-                case .connecting:
-                    break
-                }
+        Task {
+            switch connectionStatus {
+            case .disconnected, .failed:
+                await connectUseCase.execute()
+            case .connected:
+                await cameraControlRepo.disconnect()
+            case .connecting:
+                break
             }
         }
+    }
     
     func recordButtonTapped(){
         Task {

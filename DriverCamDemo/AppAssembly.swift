@@ -39,14 +39,11 @@ class AppAssembly: Assembly {
         container.register(ToggleRecordingUseCase.self) { r in
             ToggleRecordingUseCase(repository: r.resolve(CameraControlRepository.self)!)
         }
-        
         container.register(ManageSettingsUseCase.self) { r in
             ManageSettingsUseCase(repository: r.resolve(SettingsRepository.self)!)
         }
         
-        
         // MARK: - Presentation Layer (ViewModels)
-        
         container.register(CameraDashboardViewModel.self) { @MainActor r in
             CameraDashboardViewModel(
                 connectUseCase: r.resolve(ConnectCameraUseCase.self)!,
@@ -54,26 +51,23 @@ class AppAssembly: Assembly {
                 cameraControlRepo: r.resolve(CameraControlRepository.self)!
             )
         }
-        
         container.register(FileListViewModel.self) { @MainActor r in
             FileListViewModel(fileRepository: r.resolve(FileRepository.self)!)
         }
-        
         container.register(SettingsViewModel.self) { @MainActor r in
             SettingsViewModel(
                 manageSettingsUseCase: r.resolve(ManageSettingsUseCase.self)!,
                 settingsRepository: r.resolve(SettingsRepository.self)!
             )
         }
+
         // MARK: - Presentation Layer (Views)
         container.register(CameraDashboardView.self) { r in
             CameraDashboardView(viewModel: r.resolve(CameraDashboardViewModel.self)!)
         }
-        
         container.register(FileListView.self) { r in
             FileListView(viewModel: r.resolve(FileListViewModel.self)!)
         }
-        
         container.register(SettingsView.self) { r in
             SettingsView(viewModel: r.resolve(SettingsViewModel.self)!)
         }
