@@ -16,6 +16,7 @@ protocol CameraControlRepository {
     var connectionState: AnyPublisher<ConnectionState, Never> { get }
     var sdCardStatus: AnyPublisher<SdCardStatus, Never> { get }
     var isRecording: AnyPublisher<Bool, Never> { get }
+    var streamReadyPublisher: AnyPublisher<Void, Never> { get } 
 
     func connect() async
     func disconnect() async
@@ -25,4 +26,6 @@ protocol CameraControlRepository {
     func takeSnapshot() async throws
     func switchToMode(_ mode: CameraMode) async throws
     func getStreamURL() async throws -> URL?
+    
+    func openLiveStream() async
 }

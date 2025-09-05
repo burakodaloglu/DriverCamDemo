@@ -14,29 +14,39 @@ class CameraDashboardViewModel: ObservableObject {
     @Published var isRecording: Bool = false
     @Published var streamUrl: URL?
 
-    private let connectUseCase: ConnectCameraUseCase
-    private let toggleRecordingUseCase: ToggleRecordingUseCase
     private let cameraControlRepo: CameraControlRepository
-    
     private var cancellables = Set<AnyCancellable>()
     
     init(connectUseCase: ConnectCameraUseCase, toggleRecordingUseCase: ToggleRecordingUseCase, cameraControlRepo: CameraControlRepository) {
-        self.connectUseCase = connectUseCase
-        self.toggleRecordingUseCase = toggleRecordingUseCase
         self.cameraControlRepo = cameraControlRepo
         subscribeToPublishers()
     }
     
     private func subscribeToPublishers() {
+        // Bağlantı durumunu dinle
         cameraControlRepo.connectionState
             .sink { [weak self] state in
                 self?.connectionStatus = state
-                if state == .disconnected || state == .failed(""){
+                
+                switch state {
+                case .connected:
+                    // Bağlantı başarılıysa, kameraya "yayını aç" komutu gönder.
+                    self?.requestLiveStream()
+                case .disconnected, .failed:
+                    // Bağlantı koptuysa, video URL'ini temizle.
                     self?.streamUrl = nil
+                default:
+                    break
                 }
-                if state == .connected {
-                    self?.getLiveStreamUrl()
-                }
+            }
+            .store(in: &cancellables)
+        
+        // --- YENİ EKLENDİ ---
+        // Kameradan "yayın hazır" sinyali geldiğinde dinle.
+        cameraControlRepo.streamReadyPublisher
+            .sink { [weak self] in
+                // Sinyal geldiğinde, video URL'ini alarak oynatıcıyı başlat.
+                self?.startPlayer()
             }
             .store(in: &cancellables)
         
@@ -44,7 +54,13 @@ class CameraDashboardViewModel: ObservableObject {
             .assign(to: &$isRecording)
     }
     
-    private func getLiveStreamUrl() {
+    private func requestLiveStream() {
+        Task {
+            await cameraControlRepo.openLiveStream()
+        }
+    }
+    
+    private func startPlayer() {
         Task {
             self.streamUrl = try? await cameraControlRepo.getStreamURL()
         }
@@ -54,7 +70,7 @@ class CameraDashboardViewModel: ObservableObject {
         Task {
             switch connectionStatus {
             case .disconnected, .failed:
-                await connectUseCase.execute()
+                await cameraControlRepo.connect()
             case .connected:
                 await cameraControlRepo.disconnect()
             case .connecting:
@@ -65,7 +81,11 @@ class CameraDashboardViewModel: ObservableObject {
     
     func recordButtonTapped(){
         Task {
-            try await toggleRecordingUseCase.execute(isRecording: self.isRecording)
+            if isRecording {
+                try await cameraControlRepo.stopRecording()
+            } else {
+                try await cameraControlRepo.startRecording()
+            }
         }
     }
 }
